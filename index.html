@@ -1,0 +1,160 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title>MaNGOS-Bot</title>
+	<link rel="stylesheet" type="text/css" href="doc/playerbot/style.css"></link>
+	<style>
+.news .group {
+	font-weight: bold;
+	margin-top: 5px;
+}
+
+.news .group:first-child {
+	margin-top: 0px;
+}
+
+.news .row {
+	margin-left: 10px;
+	clear: both;
+}
+
+.news .row .line {
+	float: left;
+	margin-right: 10px;
+}
+
+.news .row .date {
+}	
+	</style>
+	<script language="javascript" type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+	<script language="javascript" type="text/javascript" src="http://jtemplates.tpython.com/jTemplates/jquery-jtemplates.js"></script>
+	<script language="javascript" type="text/javascript" src="https://github.com/phstc/jquery-dateFormat/raw/master/jquery.dateFormat-1.0.js"></script>
+	<script language="javascript" type="text/javascript" src="http://aloe.no-ip.biz:8888/news/start/script?name=news/git/playerbot"></script>
+	<script language="javascript" type="text/javascript">
+		$().ready(function() {
+			$("#news").setTemplate($("#reportTableRowTemplate").html());
+			$("#news").processTemplate(repoNews);
+		});
+	</script>
+</head>
+
+<body>
+  <a href="http://github.com/ike3/mangosbot"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
+
+  <div id="container">
+
+    <div class="download">
+      <a href="http://github.com/ike3/mangosbot/zipball/ai">
+        <img border="0" width="90" src="http://github.com/images/modules/download/zip.png"></a>
+      <a href="http://github.com/ike3/mangosbot/tarball/ai">
+        <img border="0" width="90" src="http://github.com/images/modules/download/tar.png"></a>
+    </div>
+
+    <h1><a href="http://ike3.github.io/mangosbot-docs/">MaNGOS-Bot</a>
+      <span class="small">by <a href="http://github.com/ike3">ike3</a></span></h1>
+
+    <div class="description">
+      This is a modification of MaNGOS (R2, Trinity) server which brings a number of bots online and available for any player. Also allows you to use your account/guild characters as bots.
+    </div>
+	
+<p>
+Welcome to the MaNGOS-Bot project! Basic features:
+<ul>
+<li>Finest bot control using chat commands</li>
+<li>Hundreds of bots spread around the world at any time waiting for your invitation or dungeon finder</li>
+<li>More than 100 chat commands to interact with the bots</li>
+<li>More than 30 strategies to choose from</li>
+<li>Improved auction house bot with bots as bidders and market price calculations</li>
+<li>Structured and simple source code.</li>
+</ul>
+</p>
+
+<p>
+This makes possible:
+<ul>
+<li>Inviting bots to party (or using the Dungeon Finder) and playing dungeon, raid or doing some PvP</li>
+<li>Summoning your alts as bots to quick item exchange, casting some spells, buffing, leveling, crafting, etc.</li>
+<li>Random PVP with bots of opposite faction or dueling with bots from your faction</li>
+<li>Trading and auctioning</li>
+<li>Making World of Warcraft even a completely single-player game!</li>
+</ul>
+</p>
+
+<p>
+This project is based on <a href="https://github.com/playerbot/mangos">Blueboy's playerbot</a> (actually MaNGOS-Bot was forked from it but the codebase is now almost fully rewritten and incompatible with the original version). 
+</p>
+
+<h2>Download</h2>
+<p>
+  You can download this project in either
+  <a href="http://github.com/ike3/mangosbotbot/zipball/ai">zip</a> or
+  <a href="http://github.com/ike3/mangosbotbot/tarball/ai">tar</a> formats. You can also clone the project with <a href="http://git-scm.com">Git</a>
+  by running:
+  <pre>$ git clone https://github.com/ike3/mangosbot.git</pre>
+</p>
+
+<h2>Documentation</h2>
+<a href="doc/playerbot/Installing.html">Install Guide</a>
+<br/>
+<a href="doc/playerbot/QuickStart.html">Quick Start Guide</a>
+<br/>
+<a href="doc/playerbot/GettingStarted.html">Basics</a>
+<br/>
+<a href="doc/playerbot/ControllingBots.html">How to control bots</a>
+<br/>
+<a href="doc/playerbot/Movement.html">Movement</a>
+<br/>
+<a href="doc/playerbot/Attacking.html">Attacking</a>
+<br/>
+<a href="doc/playerbot/Looting.html">Looting</a>
+<br/>
+<a href="doc/playerbot/Interacting.html">Interacting</a>
+<br/>
+<a href="doc/playerbot/ItemsAndTrading.html">Items and Trade</a>
+<br/>
+<a href="doc/playerbot/Commands.html">Command Reference</a>
+<br/>
+<a href="doc/playerbot/RandomBots.html">Random Bots</a>
+<br/>
+<a href="doc/playerbot/Ahbot.html">Auction House Bot</a>
+<br/>
+
+<h2>News</h2>
+<div id="news" class="news"></div>
+<div style="display: none" id="reportTableRowTemplate">
+{#foreach $T as group}
+<div class="group">{$.format.date(new Date($T.group.date), "MMM yyyy")}</div>
+{#foreach $T.group.items as item}
+<div class="row">
+	<div class="line"><span class="date">{$.format.date(new Date($T.item.commitTime), "dd")}<sup>th</sup> {$.format.date(new Date($T.item.commitTime), "HH:mm")}</span> - {$T.item.shortText}</div>
+</div>
+{#/for}
+{#/for}
+</div>
+
+<br/>
+
+<h2>Thanks</h2>
+<p>
+I wish to thank the creators of MaNGOS, ScriptDev2, TrinityCore, Ahbot, original Playerbot, world database maintainers (udb, ytdb, etc.) and everybody else related to mangos project. You did awesome job!	
+</p>
+
+<h2>Licensing and disclaimer</h2>
+<p>
+The main goal of this project is learning. MaNGOS-Bot is availabe under the same license terms as original <a href="http://getmangos.com/">MaNGOS</a> project.
+<br/>
+Author maintains this only for his own interest in his free time so please do not expect anything :)
+</p>
+	
+    <div class="footer">
+      get the source code on GitHub : <a href="http://github.com/ike3/mangosbot">ike3/mangosbot</a>
+    </div>
+
+  </div>
+
+  
+</body>
+</html>

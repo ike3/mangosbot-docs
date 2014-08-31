@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title>MaNGOS-Bot</title>
+	<link rel="stylesheet" type="text/css" href="style.css"></link>
+</head>
+
+<body>
+  <a href="http://github.com/ike3/mangosbot"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
+
+  <div id="container">
+
+    <div class="download">
+      <a href="http://github.com/ike3/mangosbot/zipball/ai">
+        <img border="0" width="90" src="http://github.com/images/modules/download/zip.png"></a>
+      <a href="http://github.com/ike3/mangosbot/tarball/ai">
+        <img border="0" width="90" src="http://github.com/images/modules/download/tar.png"></a>
+    </div>
+
+    <h1><a href="http://ike3.github.io/mangosbot-docs/">MaNGOS-Bot</a>
+      <span class="small">by <a href="http://github.com/ike3">ike3</a></span></h1>
+
+    <div class="description">
+      This is a modification of MaNGOS (R2, Trinity) server which brings a number of bots online and available for any player. Also allows you to use your account/guild characters as bots.
+    </div>
+
+<h2>Random Bots</h2>
+
+<p>
+Starting from MaNGOS-Bot 0.2 a new feature is available: <b>Random Bots</b>. 
+</p>
+<p>
+When you start the server for the first time a set of accounts and random characters will be created (50 accounts x 10 characters by default). Then a random sub-set will be extracted and all those characters in the sub-set will be randomized in level, spells and equipment, then logged in at random place of the world after the server is started.
+</p>
+<p>
+The characters will act as bots without any master - usually they attack everything they see, gather some trade materials and even check some objects.
+</p>
+<p>
+You (a real player) can open a who window, browse for characters availabe, pick some and invite them to your party. If your level and gear is high enough they will accept the invitation and be your bots until you disband the party (the party will persist through logout and server restart for convinience). Some restrictions are introduced for hacking reasons (e.g. you cannot get any item from random bot without giving them some gold)
+</p>
+<p>
+On R2 branch the random bots will even join the Dungeon Finder (needs to be enabled separately using <i>AiPlayerbot.RandomBotJoinLfg = 1</i> config parameter).
+</p>
+<p>
+After some time (about a week by default, configurable) the sub-set will be changed so other bots will be available. At any change the bots will be incrementally randomized emulating level/gear gain.
+</p>
+<p>
+Please note that by default about 100-200 characters will be used as random bots so you need relatively powerful server to run them (bot AI benefit from multi-threading so multicore CPU is recommended). If your server performance is low you can reduce the number of bots (or disable gathering/grinding) using the configuration parameters.
+</p>
+
+
+
+<p>
+<a href="http://ike3.github.io/mangosbot-docs/">Back</a>
+</p>
+
+    <div class="footer">
+      get the source code on GitHub : <a href="http://github.com/ike3/mangosbot">ike3/mangosbot</a>
+    </div>
+
+  </div>
+
+  
+</body>
+</html>

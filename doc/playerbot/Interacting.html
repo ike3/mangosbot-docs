@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title>MaNGOS-Bot</title>
+	<link rel="stylesheet" type="text/css" href="style.css"></link>
+</head>
+
+<body>
+  <a href="http://github.com/ike3/mangosbot"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
+
+  <div id="container">
+
+    <div class="download">
+      <a href="http://github.com/ike3/mangosbot/zipball/ai">
+        <img border="0" width="90" src="http://github.com/images/modules/download/zip.png"></a>
+      <a href="http://github.com/ike3/mangosbot/tarball/ai">
+        <img border="0" width="90" src="http://github.com/images/modules/download/tar.png"></a>
+    </div>
+
+    <h1><a href="http://ike3.github.io/mangosbot-docs/">MaNGOS-Bot</a>
+      <span class="small">by <a href="http://github.com/ike3">ike3</a></span></h1>
+
+    <div class="description">
+      This is a modification of MaNGOS (R2, Trinity) server which brings a number of bots online and available for any player. Also allows you to use your account/guild characters as bots.
+    </div>
+
+<h2>Interacting</h2>
+
+<p>
+Beside strategies there is a number of commands can be used to interact with bots in some way. This is usually used to get some information about the bot (i.e. quest status, items, etc.). Bot can provide some information if you whisper them a item, quest or game object link (i.e. quest status, item usefulness, etc.)
+</p>
+
+<p>
+<pre>stats</pre>
+Bot will reply about their gold, experience, bag space, equipped items repair cost.
+</p>
+
+<p>
+<pre>quests</pre>
+Bot will reply with their quest summary divided by status (completed/incompleted). Can be enhanced by whispering <i>quests all</i> - full quest report, <i>quests completed</i> - only quests that can be turned in, <i>quests incompleted</i> - only incompleted quests, <i>quests summary</i> - same as <i>quests</i>
+</p>
+
+<p>
+<pre>q [quest]</pre>
+Bot will tell specified quest status with progress by objectives
+</p>
+
+<p>
+<pre>drop [quest]</pre>
+Bot will drop the specified quest
+</p>
+
+<p>
+<pre>accept [quest]</pre>
+Bot will accept the specified quest from the selected quest giver (quest link can be replaced with <i>*</i> so bot will accept all available quests)
+</p>
+
+<p>
+If you pick a quest when bot is in range, he will pick the quest as well. When you turn-in the quest, bot will turn-in it as well (of course if it is completed). 
+You can share any shareable quest with the bot - it will accept it if allowed by the game.
+</p>
+
+<p>
+When turning in a quest with reward selection bot will not select reward by himself. You need to whisper them
+<pre>r [item]</pre> where [item] is reward item link
+</p>
+
+<p>
+<a href="http://ike3.github.io/mangosbot-docs/">Back</a>
+</p>
+
+    <div class="footer">
+      get the source code on GitHub : <a href="http://github.com/ike3/mangosbot">ike3/mangosbot</a>
+    </div>
+
+  </div>
+
+  
+</body>
+</html>

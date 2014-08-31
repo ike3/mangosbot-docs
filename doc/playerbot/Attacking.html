@@ -1,0 +1,147 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title>MaNGOS-Bot</title>
+	<link rel="stylesheet" type="text/css" href="style.css"></link>
+</head>
+
+<body>
+  <a href="http://github.com/ike3/mangosbot"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
+
+  <div id="container">
+
+    <div class="download">
+      <a href="http://github.com/ike3/mangosbot/zipball/ai">
+        <img border="0" width="90" src="http://github.com/images/modules/download/zip.png"></a>
+      <a href="http://github.com/ike3/mangosbot/tarball/ai">
+        <img border="0" width="90" src="http://github.com/images/modules/download/tar.png"></a>
+    </div>
+
+    <h1><a href="http://ike3.github.io/mangosbot-docs/">MaNGOS-Bot</a>
+      <span class="small">by <a href="http://github.com/ike3">ike3</a></span></h1>
+
+    <div class="description">
+      This is a modification of MaNGOS (R2, Trinity) server which brings a number of bots online and available for any player. Also allows you to use your account/guild characters as bots.
+    </div>
+
+<h2>Attacking</h2>
+
+<p>
+Combat is an essential part of MaNGOS-Bot. By default bot has some strategies so they will assist its master and other bots when attacked.
+You can start combat by pulling mobs yourself and bot will assist you. If you want bot to start attacking some creature himself, target the creature and whisper
+<pre>do attack</pre>
+This is very useful and the macro can be created and bound to the some key which will start the combat when you want. Note: bots will never start the combat until they are attacked or told to do so. Exception is the <i>grind</i> strategy which instructs bots to attack everything they see.
+</p>
+
+<p>
+Basically there are several non-combat strategies that can be used to instruct bot how to select their target.
+</p>
+
+<p>
+<i>tank assist</i>
+<br/>
+Assist party players (including other bots in party) by attacking the most threating target. This is single tanking stategy.
+<br/>
+<br/>
+
+<i>tank aoe</i>
+<br/>
+Frequently switch target between targets. This is AOE tanking strategy. Note: some classes (e.g. paladin) will use aoe tanking abilities in combat so <i>tank assist</i> can have the same effect as <i>tank aoe</i>.
+<br/>
+<br/>
+
+<i>dps assist</i>
+<br/>
+Assist party players by attacking more threated target. This is single dps stategy.
+<br/>
+<br/>
+
+<i>dps aoe</i>
+<br/>
+Frequently switch target between less threated targets. This is AOE dps strategy. Note: some classes will use aoe dps abilities in combat so <i>dps assist</i> will do the same as <i>dps aoe</i>.
+<br/>
+<br/>
+
+<i>attack weak</i>
+<br/>
+Always attack the weakest target (target having the least health points) and switch to other one if it is weaker than the current target.
+<br/>
+<br/>
+
+<i>grind</i>
+<br/>
+Attack any visible target, then switch to another one and so on.
+</p>
+
+<p>
+By default tank classes have <i>tank aoe</i> strategy, others have <i>attack weak</i>. This will result in tank holding the threat and dps damaging it, so the combat should be balanced. Anyway <i>do attack</i> action with a target selected will change bot mind and they switch to this target immediately. Althought with <i>tank aoe</i> and <i>dps aoe</i> strategies the bot will switch the target after some time.
+</p>
+
+<p>
+Note that you need to add/remove this stategies to both combat and non-combat category unless you want bot to stop assisting if it is in combat for example.
+</p>
+
+<br/>
+
+<p>
+When the target is selected the bot switches to combat strategy. It tells which abilities needs to be used in which sequence, how to react to some game events, etc. Although some default strategies are configured, they may not reflect your character talent build, your group or anything else. So you can replace it with more appropriate ones.
+</p>
+<p>
+There is a wide range of combat strategies based on bot abilities, talent builds and class. Generally they can be divided into several groups.
+</p>
+<p>
+<b>Direct combat stragegies</b> which are intended to be the main strategy of the bot. They can differ depending on bot class but the basic ones are:
+<br/>
+<i>tank</i> - bot will use threat-generating abilities. Supported classes: warrior, paladin and druid. For druid it also known as <i>bear</i>.
+<br/>
+<i>dps</i> - obvious, less threat, more dps. Supported classes: rogue, hunter, druid, shaman, priest. For druid it also known as <i>cat</i>.
+<br/>
+<i>heal</i> - focus on party healing other that damage or tanking. Supported classes: shaman, priest.
+<br/>
+</p>
+
+<p>
+<b>Talent-specific direct combat strategies</b>
+<i>frost</i> - Useful only for frost mages.
+<br/>
+<i>fire</i> - Useful only for fire mages.
+<br/>
+<i>bear</i> - Feral tanking druid.
+<br/>
+<i>cat</i> - Feral dps druid.
+<br/>
+<i>caster</i> - Balance dps druid.
+</p>
+
+<p>
+<b>Buff stragegies</b> which are intended to be used with the main combat strategy.
+<br/>
+<i>bdps</i> - buffs dps of self and other players. Example: paladin will use seal of might.
+<br/>
+<i>bspeed</i> - buffs movement speed. Only for hunter - allows him to use aspect of the cheetach/pack when not in combat
+<br/>
+<i>bhealth</i>, <i>bmana</i> - buffs health or mana. Example: paladin will use seal of light vs seal of wisdom.
+</p>
+
+<p>
+<b>Resistance stragegies</b> are some kind of buff strategies, but affects magic resistance so moved to separate group.
+<br/>
+<i>rfire</i>, <i>rfrost</i>, <i>rshadow</i>, <i>rnature</i>  - supported only for paladin auras and hunter aspects.
+</p>
+
+<p>
+<a href="http://ike3.github.io/mangosbot-docs/">Back</a>
+</p>
+
+    <div class="footer">
+      get the source code on GitHub : <a href="http://github.com/ike3/mangosbot">ike3/mangosbot</a>
+    </div>
+
+  </div>
+
+  
+</body>
+</html>

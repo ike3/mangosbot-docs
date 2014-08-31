@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title>MaNGOS-Bot</title>
+	<link rel="stylesheet" type="text/css" href="style.css"></link>
+</head>
+
+<body>
+  <a href="http://github.com/ike3/mangosbot"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
+
+  <div id="container">
+
+    <div class="download">
+      <a href="http://github.com/ike3/mangosbot/zipball/ai">
+        <img border="0" width="90" src="http://github.com/images/modules/download/zip.png"></a>
+      <a href="http://github.com/ike3/mangosbot/tarball/ai">
+        <img border="0" width="90" src="http://github.com/images/modules/download/tar.png"></a>
+    </div>
+
+    <h1><a href="http://ike3.github.io/mangosbot-docs/">MaNGOS-Bot</a>
+      <span class="small">by <a href="http://github.com/ike3">ike3</a></span></h1>
+
+    <div class="description">
+      This is a modification of MaNGOS (R2, Trinity) server which brings a number of bots online and available for any player. Also allows you to use your account/guild characters as bots.
+    </div>
+
+<h2>Movement</h2>
+
+<p>
+By default your bots will stay in place until you command them to do some other thing.
+</p>
+
+<p>
+The following strategies can be used to control bot movement:
+<br/>
+<i>stay</i> - stay in place (default)
+<br/>
+<i>follow</i> - follow master - including teleporting to instances and taking taxi nodes (flight masters)
+<br/>
+<i>passive</i> - don't attack, loot, etc. Usually combined with follow to make bots flee with you from some danger. Without this strategy they will try to attack something and will eventually die.
+</p>
+
+<p>
+While the bot is somewhere far away from the master it needs to be teleported. If there is a meeting stone nearby, select the bot and right-click the stone. When the summoning portal is open, select the bot you want to teleport, then right-click the portal. Bot will be summoned soon. NOTE: there is no need of another player to summon bots.
+</p>
+
+<p>
+Although controlling strategies is very powerful technique it is not very easy. So there are predefined shortcut commands for adding/removing such strategies:
+<ul>
+	<li><i>stay</i> - stay in place
+	<li><i>follow</i> - follow master
+	<li><i>flee</i> - flee with master (do not attack anything)
+	<li><i>grind</i> - start grinding
+	<li><i>runaway</i> - flee from current target (kite)
+</ul>
+</p>
+
+<p>
+These shortcuts mean adding one strategies and removing others such as:
+</p>
+
+<p>To make bots flee with you from the danger:</p>
+<pre>
+/g reset
+/g nc -stay,+follow,+passive
+/g co +passive
+/g do follow
+</pre>
+
+
+<p>To make bots follow you and assist you in attack:</p>
+<pre>
+/g nc -stay,+follow,-passive
+/g co -passive
+/g do follow
+</pre>
+
+<p>To make bots stay in place and assist you in attack:</p>
+<pre>
+/g nc -follow,+stay,+passive
+/g co +passive
+/g do stay
+</pre>
+
+<p>
+<b>HINT</b>: you can create several macros and bind them to action bar or keys:
+</p>
+
+<p>
+<a href="http://ike3.github.io/mangosbot-docs/">Back</a>
+</p>
+
+    <div class="footer">
+      get the source code on GitHub : <a href="http://github.com/ike3/mangosbot">ike3/mangosbot</a>
+    </div>
+
+  </div>
+
+  
+</body>
+</html>
