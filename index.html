@@ -1,166 +1,362 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html>
+<html lang="en">
 
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-	<title>MaNGOS-Bot</title>
-	<link rel="stylesheet" type="text/css" href="doc/playerbot/style.css"></link>
-	<style>
-.news .group {
-	font-weight: bold;
-	margin-top: 5px;
-}
+  <head>
 
-.news .group:first-child {
-	margin-top: 0px;
-}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-.news .row {
-	margin-left: 10px;
-	clear: both;
-}
+    <title>MaNGOSBot by ike3</title>
 
-.news .row .line {
-	float: left;
-	margin-right: 10px;
-}
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-.news .row .date {
-}	
-	</style>
-	<script language="javascript" type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
-	<script language="javascript" type="text/javascript" src="http://jtemplates.tpython.com/jTemplates/jquery-jtemplates.js"></script>
-	<script language="javascript" type="text/javascript" src="https://github.com/phstc/jquery-dateFormat/raw/master/jquery.dateFormat-1.0.js"></script>
-	<script language="javascript" type="text/javascript" src="http://aloe.no-ip.biz:8888/news/start/script?name=news/git/playerbot"></script>
-	<script language="javascript" type="text/javascript">
-		$().ready(function() {
-			$("#news").setTemplate($("#reportTableRowTemplate").html());
-			$("#news").processTemplate(repoNews);
-		});
-	</script>
-</head>
+    <!-- Custom fonts for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet">
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
 
-<body>
-  <a href="http://github.com/ike3/mangosbot"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
+    <!-- Custom styles for this template -->
+    <link href="css/resume.min.css" rel="stylesheet">
 
-  <div id="container">
+  </head>
 
-    <div class="download">
-      <a href="http://github.com/ike3/mangosbot/zipball/ai">
-        <img border="0" width="90" src="http://github.com/images/modules/download/zip.png"></a>
-      <a href="http://github.com/ike3/mangosbot/tarball/ai">
-        <img border="0" width="90" src="http://github.com/images/modules/download/tar.png"></a>
-    </div>
+  <body id="page-top">
 
-    <h1><a href="http://ike3.github.io/mangosbot-docs/">MaNGOS-Bot</a>
-      <span class="small">by <a href="http://github.com/ike3">ike3</a></span></h1>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+      <a class="navbar-brand js-scroll-trigger" href="#page-top">
+        <span class="d-block d-lg-none">MaNGOSBot</span>
+        <span class="d-none d-lg-block">
+          <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="img/wow.jpg" alt="">
+        </span>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#features_core">Core Features</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#features_bot">Bot Features</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#immersive">Immersive</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#install">Install Guide</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#download">Download</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#quickstart">How to play</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#advanced">Advanced guide</a>
+            </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#thanks">Thanks</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
 
-    <div class="description">
-      This is a modification of MaNGOS (R2, Trinity) server which brings a number of bots online and available for any player. Also allows you to use your account/guild characters as bots.
-    </div>
-	
-<p>
-Welcome to the MaNGOS-Bot project! Basic features:
-<ul>
-<li>Finest bot control using chat commands</li>
-<li>Hundreds of bots spread around the world at any time waiting for your invitation or dungeon finder</li>
-<li>More than 100 chat commands to interact with the bots</li>
-<li>More than 30 strategies to choose from</li>
-<li>Improved auction house bot with bots as bidders and market price calculations</li>
-<li>Structured and simple source code.</li>
-</ul>
-</p>
+    <div class="container-fluid p-0">
 
-<p>
-This makes possible:
-<ul>
-<li>Inviting bots to party (or using the Dungeon Finder) and playing dungeon, raid or doing some PvP</li>
-<li>Summoning your alts as bots to quick item exchange, casting some spells, buffing, leveling, crafting, etc.</li>
-<li>Random PVP with bots of opposite faction or dueling with bots from your faction</li>
-<li>Trading and auctioning</li>
-<li>Making World of Warcraft even a completely single-player game!</li>
-</ul>
-</p>
-
-<p>
-This project is based on <a href="https://github.com/playerbot/mangos">Blueboy's playerbot</a> (actually MaNGOS-Bot was forked from it but the codebase is now almost fully rewritten and incompatible with the original version). 
-</p>
-
-<h2>Demo</h2>
-<iframe width="640" height="360" src="https://www.youtube.com/embed/6CoYMq_QgnE" frameborder="0" allowfullscreen></iframe>
-<p>
-Thanks to Conan513 for the video!
-</p>
-
-<h2>Download</h2>
-<p>
-  You can download this project in either
-  <a href="http://github.com/ike3/mangosbotbot/zipball/ai">zip</a> or
-  <a href="http://github.com/ike3/mangosbotbot/tarball/ai">tar</a> formats. You can also clone the project with <a href="http://git-scm.com">Git</a>
-  by running:
-  <pre>$ git clone https://github.com/ike3/mangosbot.git</pre>
-</p>
-
-<h2>Documentation</h2>
-<a href="doc/playerbot/Installing.html">Install Guide</a>
-<br/>
-<a href="doc/playerbot/QuickStart.html">Quick Start Guide</a>
-<br/>
-<a href="doc/playerbot/GettingStarted.html">Basics</a>
-<br/>
-<a href="doc/playerbot/ControllingBots.html">How to control bots</a>
-<br/>
-<a href="doc/playerbot/Movement.html">Movement</a>
-<br/>
-<a href="doc/playerbot/Attacking.html">Attacking</a>
-<br/>
-<a href="doc/playerbot/Looting.html">Looting</a>
-<br/>
-<a href="doc/playerbot/Interacting.html">Interacting</a>
-<br/>
-<a href="doc/playerbot/ItemsAndTrading.html">Items and Trade</a>
-<br/>
-<a href="doc/playerbot/Commands.html">Command Reference</a>
-<br/>
-<a href="doc/playerbot/RandomBots.html">Random Bots</a>
-<br/>
-<a href="doc/playerbot/Ahbot.html">Auction House Bot</a>
-<br/>
-
-<h2>News</h2>
-<div id="news" class="news"></div>
-<div style="display: none" id="reportTableRowTemplate">
-{#foreach $T as group}
-<div class="group">{$.format.date(new Date($T.group.date), "MMM yyyy")}</div>
-{#foreach $T.group.items as item}
-<div class="row">
-	<div class="line"><span class="date">{$.format.date(new Date($T.item.commitTime), "dd")}<sup>th</sup> {$.format.date(new Date($T.item.commitTime), "HH:mm")}</span> - {$T.item.shortText}</div>
-</div>
-{#/for}
-{#/for}
-</div>
-
-<br/>
-
-<h2>Thanks</h2>
-<p>
-I wish to thank the creators of MaNGOS, ScriptDev2, TrinityCore, Ahbot, original Playerbot, world database maintainers (udb, ytdb, etc.) and everybody else related to mangos project. You did awesome job!	
-</p>
-
-<h2>Licensing and disclaimer</h2>
-<p>
-The main goal of this project is learning. MaNGOS-Bot is availabe under the same license terms as original <a href="http://getmangos.com/">MaNGOS</a> project.
-<br/>
-Author maintains this only for his own interest in his free time so please do not expect anything :)
-</p>
-	
-    <div class="footer">
-      get the source code on GitHub : <a href="http://github.com/ike3/mangosbot">ike3/mangosbot</a>
-    </div>
-
-  </div>
+      <section class="resume-section p-3 p-lg-5 d-flex d-column" id="about">
+        <div class="my-auto">
+          <h1 class="mb-0">MaNGOSBot</h1>
+          <div class="subheading mb-5">by ike3
+          </div>
+          <p class="lead mb-5">This is a modification of MaNGOS (Zero, One, R2, Trinity) server which brings a number of bots online and available for any player. Also allows you to use your account/guild characters as bots.</p>
+          <p class="lead mb-5">This mod could be used to play WoW in a single player mode but experiencing multiplayer content.</p>
+        </div>
+      </section>
 
   
-</body>
+      <hr class="m-0">
+  
+      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="features_core">
+        <div class="my-auto">
+          <h2 class="mb-5">Core Features</h2>
+
+          <div class="resume-item d-flex flex-column flex-md-row mb-5">
+            <div class="resume-content mr-auto">
+              <h3 class="mb-0">Play with your alts</h3>
+              <div class="subheading mb-3">they are always online with you</div>
+              <p>Whenever you log in, all your alt characters are online as well. You could interact with them, exchange items, invite to your group, go to a dungeon or raid, check their stats, use their tradeskills, craft items etc.</p>
+            </div>
+          </div>
+
+          <div class="resume-item d-flex flex-column flex-md-row mb-5">
+            <div class="resume-content mr-auto">
+              <h3 class="mb-0">Populated world</h3>
+              <div class="subheading mb-3">hundreds of bots playing the game</div>
+              <p>Even if you are the only player on the server, there are random bots available across all the continents. You can meet them in world, invite to your group, trade, go for a dungeon or raid, pvp, duel etc.</p>
+            </div>
+          </div>
+
+          <div class="resume-item d-flex flex-column flex-md-row mb-5">
+            <div class="resume-content mr-auto">
+              <h3 class="mb-0">Auction house and trading</h3>
+              <div class="subheading mb-3">with bots</div>
+              <p>Bots will post items on the AH so you could buy something useful. They will also buy your items if the price is right. There is a number of pricing strategies and the market simulation making the prices fluctuate depending on your actions.</p>
+            </div>
+          </div>
+
+          <div class="resume-item d-flex flex-column flex-md-row mb-5">
+            <div class="resume-content mr-auto">
+              <h3 class="mb-0">Guild tasks</h3>
+              <div class="subheading mb-3">check your mail</div>
+              <p>Bots will form random guilds sending you advertisement mails for some tasks. If you kill certain mobs or bring the sender certain items (using trade or sending by mail) guild masters will reward you with gold and good items. But make haste though, the tasks expire one a coouple days.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </section>
+
+      <hr class="m-0">
+
+      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="features_bot">
+        <div class="my-auto">
+          <h2 class="mb-5">Bot Features</h2>
+
+          <div class="resume-item d-flex flex-column flex-md-row mb-5">
+            <div class="resume-content mr-auto">
+              <h3 class="mb-0">Simplicity</h3>
+              <div class="subheading mb-3">just install MaNGOSBot addon</div>
+              <p>The best way to interact with bots is to use the MaNGOSBot addon. Just select your bot and click the appropriate buttons. There are keybinding available such as commands to follow you, stop moving, attack etc. You do not need to do anything though - just invite bots to your group, command them to follow and the AI will take care for everything else.</p>
+            </div>
+          </div>
+
+          <div class="resume-item d-flex flex-column flex-md-row mb-5">
+            <div class="resume-content mr-auto">
+              <h3 class="mb-0">Fine bot control</h3>
+              <div class="subheading mb-3">via chat commands or using MaNGOSBot addon</div>
+              <p>Bots are self-capable of doing usual WoW stuff, but the power of the mod is the chat commands you could use to tell bots what and how to to it. For example, you can tell them to start clearing the area of mobs while you doing something more interesting. Or command to go to a mailbox, check the mail and maybe send you some items or gold.</p>
+            </div>
+          </div>
+
+          <div class="resume-item d-flex flex-column flex-md-row mb-5">
+            <div class="resume-content mr-auto">
+              <h3 class="mb-0">AI</h3>
+              <div class="subheading mb-3">combat and non-combat mode</div>
+              <p>The engine uses reactive AI so the bots watch for something happens and react by doing something. There are different ways how to react so calling strategies, and you can tell bots which one to use at the moment. For example, you can swith a warrior to be a tank or dps. A mage can use frost, fire or arcane rotations. A priest could a healer or a shadow dps. You can tell the bots how to buff players (increasing their dps, mana regen or maybe threat).</p>
+            </div>
+          </div>
+
+        </div>
+
+      </section>
+
+      <hr class="m-0">
+
+      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="immersive">
+        <div class="my-auto">
+          <h2 class="mb-5">Immersive</h2>
+
+          <div class="resume-item d-flex flex-column flex-md-row mb-5">
+            <div class="resume-content mr-auto">
+              <h3 class="mb-0">Buying attrbites</h3>
+              <div class="subheading mb-3">from vendors</div>
+              <p>You need not only buy your abilities from class trainers but the attributes are purchaseable now. Each level you gain 3 attribute points which can be spent on Strength, Agility, Intellect, Stamina or Spirit. You need a lot of gold for this so playing on the AH with bots is a must.</p>
+            </div>
+          </div>
+
+          <div class="resume-item d-flex flex-column flex-md-row mb-5">
+            <div class="resume-content mr-auto">
+              <h3 class="mb-0">Death is painful</h3>
+              <div class="subheading mb-3">you lose attrbites</div>
+              <p>If you died and releases your spirit you lose 3 attribute points and need to buy them again from class trainer. So make sure you do not die. Bring a lot of healing potions, use items etc. You do not lose anything if resurrected by a healer thought.</p>
+            </div>
+          </div>
+
+          <div class="resume-item d-flex flex-column flex-md-row mb-5">
+            <div class="resume-content mr-auto">
+              <h3 class="mb-0">Fall damage</h3>
+              <div class="subheading mb-3">can kill you</div>
+              <p>Falling is painful now. Jumping from a height more than twice the character size is a certain death. So you'd better use spells or items to avail falling.</p>
+            </div>
+          </div>
+
+          <div class="resume-item d-flex flex-column flex-md-row mb-5">
+            <div class="resume-content mr-auto">
+              <h3 class="mb-0">Simlified alt leveling</h3>
+              <div class="subheading mb-3">and reputation grinding</div>
+              <p>All your alts are leveled with you if they are not in a group. So when you get some XP or reputation they get 90% of the amount gained so you do not need to level 10 your chars independenlty to form a raid group. Completing a quest also marks it as completed for all your alts. They do not receive any rewards and gold thought and you need gold to buy them skills and attributes.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </section>
+    
+      <hr class="m-0">
+
+      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="install">
+        <div class="my-auto">
+          <h2 class="mb-5">Installation Guide</h2>
+
+          <p>Installing mangosbot can be tricky but easy if you are famillar with the MaNGOS core itself. Basically you need to enable some settings during compilation and apply additional SQL files to your DB and add config files to your realm.</p>
+
+          <div class="subheading mb-3">Workflow</div>
+          <ul class="fa-ul mb-0">
+            <li>
+              <i class="fa-li fa fa-check"></i>
+              Checkout the code from the appropriate branch depending on the game version you want to use. Theare are a little changes to the core itself, mostly some hook points to call the MaNGOSBot code. You can even checkout other version of the core and apply these changes manually (search of #ifdef ENABLE_PLAYERBOTS for more information).</li>
+            <li>
+              <i class="fa-li fa fa-check"></i>
+              Update all submodules to the latest version. The references to submodules are usually outdated so it is a good idea to pull them manually so the latest version will be used. It is always compatible with the main code.</li>
+            <li>
+              <i class="fa-li fa fa-check"></i>
+              Configure and build the code. Make sure to set ENABLE_PLAYERBOTS and ENABLE_IMMERSIVE to true.</li>
+            <li>
+              <i class="fa-li fa fa-check"></i>
+              Apply SQL files from modules/Bots/sql and modules/Immersive/sql to the appropriate DBs (see file names such as characters_*.sql and world_*.sql)</li>
+            <li>
+              <i class="fa-li fa fa-check"></i>
+              Configure AhBot, Immersive and MaNGOSBot by putting ahbot.conf, immersive.conf and aiplayerbot.conf to your config directory (where mangosd.conf is located). Feel free to change any value, although the default ones are fine too. This actually enables the features so the config files are mandatory.</li>
+              <li>
+                <i class="fa-li fa fa-check"></i>
+                Run the server. The first run can be quite slow as a vast number of random characters will be created. It is recommended to init them all at once by running "rndbot init" console command, wait for it to complete and restart the server. If you do not run the server for more than couple days it is a good idea to repeat the initialization process again.</li>
+            </ul>
+        </div>
+      </section>
+
+      <hr class="m-0">
+
+      <section class="resume-section p-3 p-lg-5 d-flex d-column" id="download">
+          <div class="my-auto">
+            <h2 class="mb-5">Source Code only</h2>
+            <p>MaNGOSBot is available as source code only. You need to build it using the appropriate tools for your platform.</p>
+            <pre>git clone https://github.com/ike3/mangosbot.git</pre>
+          </div>
+        </section>
+
+      <hr class="m-0">
+
+      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="quickstart">
+        <div class="my-auto">
+          <h2 class="mb-5">How to play the game</h2>
+          <p>Create your main character and a number of alts. As they will level simultaniously it is a good idea to create them early on. Log in the game as a main character.</p>
+          <p>You'll notice than all your alts are staying near you ready to play. Invite them to your group and use MaNGOSBot Addon to customize their behaviour.</p>
+          <p>It is recommended to assign some keyboard shortcuts to MaNGOSBot Addon key binding such as Follow, Stay, Attack, Flee etc to quickly command all your party to do something. Now make them follow you and go play the game!</p>
+          <p>Grab a quest from a quest giver - your alts will grab it too. Start killing the mobs for the quest - your alts will help you: the tank will grab the aggro, the healer will heal, others will damage your targets, everyone will apply the needed buffs etc. They will loot the quest items if necessary and report to chat their progress with quests.</p>
+          <p>If the quest requires to use some gameobjects you can ask bots to tell you all they see. Whisper:</p>
+            <pre>los</pre>
+          <p>This will print you a lot of links: all game object, units, npcs, players etc. nearby. Choose the correct one and tell:
+            <pre>u [gameobject]</pre>
+            [gameobject] is the gameobject link, Shift-click the links provided by bot and it will be copied to the chat box.
+            The bot willthen  use the object and trigger the quest required action.
+          </p>
+          <p>When the quest is done for everyone in your group, go to the quest giver and turn it in. The bots will turn the quest too and get the XP and the reward if available.</p>
+          <p>If the quest has multiple rewards, you need to tell everyone what to choose. Just whisper to each player a command such as:
+            <pre>r [item]</pre>
+            [item] is a item link, Shift-click to the quest reward to copy it to the chat box. Then the bot will turn the quest in choosing this reward.
+          </p>
+          <p>When looting you'll notice that bots sometimes say to chat that the looted items could be useful in some way. They could equip it for instance. Or you may have an item useful for a bot or maybe they will have an item useful for you. It is time to exchange those items and equip something new. Just select a bot and click Inventory button on the MaNGOSBot Addon. Provided you installed EngBot addon the window will pop-up showing the bot's inventory the same way this addons shows yours. Use context menu to make the bot add the item to the trade window, to equip, to use, or even to destroy the items. You can give them your items and gold by trading.</p>
+          <p>Alternative to the addon are the chat commands. You can find more information in latter pages on this guide, but in general you need to whisper commands such as (small text is the command description):
+            <pre>u [item] <small>to <b>u</b>se this item</small></pre>
+            <pre>e [item] <small>to <b>e</b>quip this item</small></pre>
+            <pre>ue [item] <small>to <b>u</b>n<b>e</b>quip this item</small></pre>
+            <pre>t [item] <small>to add the item to the <b>t</b>rade window</small></pre>
+            <pre>b [item] <small>to <b>b</b>uy this item from a vendor nearby</small></pre>
+            <pre>s [item] <small>to <b>s</b>ell this item</small></pre>
+            <pre>destroy [item] <small>to destroy the item</small></pre>
+          </p>
+          <p>Now it is time to level up some skills and attributes. Go to the class trainer and start talking. The bots will whisper in chat what they could learn. Tell them:
+            <pre>trainer learn</pre>
+            And the bot will learn these skills.
+          </p>
+          <p>Buying attributes is done by talking to the npc. This is done using the <b>talk</b> command:</p>
+              <pre>talk</pre>
+          <p>And the bot will whisper you everything the NPC said to him. Note than options will have a numbers before them. Whisper:</p>
+              <pre>talk 2</pre>
+              2 - is the number of an option and the bot will choose this option and the conversation will go on. So you can buy the attributes now.
+            </p>
+          <p>You can learn this way any skills including weapons, crafting, spells etc.</p>
+          <p>Hey, they have not enough gold to do so! Is it time to play the game and get some stuff to sell!</p>
+          <p>Now it is time to craft something. Use MaNGOSBot Addon and click Spells button. The window will pop-up showing all craftable items that bot can craft. Just use context menu to craft it. They could create something useful for you too!</p>
+          <p>Sometimes you need to check some information about the bot current stats, level etc. There are some commands available:
+              <pre>stats <small>to see bot gold, XP, item durability</small></pre>
+              <pre>who <small>to see bot overall information such as level, talents etc</small></pre>
+              <pre>who [skill] <small>to see level of that skill, eg. skinning</small></pre>
+              <pre>ready <small>to see overall bot readyness to fight</small></pre>
+          </p>
+          <p>Bored to do a group play? Then disband the party and play alone for some time. Is it usually a good idea to brind your alts near a mailbox or to make them stay at the inn (maybe using a hearthstone) before though. Do not worry: the bots will level up with you, so you won't outlevel them.</p>
+          <p>The easiest way to disband the party is to whisper:
+            <pre>leave</pre>
+            in the group chat or use the MaNGOSBot addon. Note that if you leave the party, others will still remain in party without you and they will no t get any shared XP, rep, do quests etc. so this commands makes all bots to leave the party disbanding it.
+          </p>
+          <p>OK, now it is time to solo!</p>
+          <p>Got something useful for others during solo play? Send it to your alts via a mailbox. Even if you are far away from them, whisper:
+            <pre>mail ?</pre>
+            Provided your alts were near a mailbox, they will show all their mail in chat. Again, note numbers before mails - they are used in mail commands:
+            <pre>mail take 5 - <small>Take all items from mail number 5</small></pre>
+            <pre>mail read 5 - <small>Read mail number 5</small></pre>
+            <pre>mail delete 5 - <small>Delete mail number 5</small></pre>
+            <pre>sendmail [item] - <small>Send [item] to you</small></pre>
+            <pre>sendmail [item] [player] - <small>Send [item] to a specific [player]</small></pre>
+          </p>
+          <p>Did some leveling? Your alts needs it too! Summon them to use or ask them to summon you:
+            <pre>summon</pre>
+            Summoning player need to be near a meeting stone or an innkeeper to be able to do so. That's why you brought your alts to the inn!
+          </p>
+          <p>Maybe now it is time to go for a dungeon? Do not forget to grab the necessary quests or just share yours with bots.</p>
+          <p>Happy playing!</p>
+          </div>
+      </section>
+
+      <hr class="m-0">
+
+      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="advanced">
+        <div class="my-auto">
+          <h2>Advanced Guide</h2>
+          <p>
+              For more detail information visit <a href="http://getmangos.com/">the complete documentation</a>
+          </p>
+                                        
+        </div>
+      </section>
+
+      <hr class="m-0">
+
+      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="thanks">
+        <div class="my-auto">
+          <h2>Thanks</h2>
+          <p>
+              I wish to thank the creators of xMaNGOS, ScriptDev, TrinityCore, Ahbot, original Playerbot, world database maintainers (udb, ytdb, etc.) and everybody else related to mangos project. You did awesome job!	
+          </p>
+          <h2>Licensing and disclaimer</h2>
+          <p>
+          The main goal of this project is learning. MaNGOS-Bot is availabe under the same license terms as original <a href="http://getmangos.com/">MaNGOS</a> project.
+          <br/>
+          Author maintains this only for his own interest in his free time so please do not expect anything :)
+          </p>
+                                        
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/resume.min.js"></script>
+
+  </body>
+
 </html>
